@@ -4,6 +4,7 @@ class Medicina {
     Marca;
     Proveedor;
     Caducidad;
+    Consulta
 /**
  * @param {Int} IdMedicina 
  * @param {String} NombreMedicina 
