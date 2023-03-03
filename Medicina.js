@@ -1,22 +1,26 @@
 class Medicina {
-    IdMedicina;
     NombreMedicina;
-    Marca;
     Proveedor;
-    Caducidad;
-    Consulta
-/**
- * @param {Int} IdMedicina 
- * @param {String} NombreMedicina 
- * @param {String} Marca 
- * @param {String} Proveedor 
- * @param {Date} Caducidad 
- */
-    constructor(IdMedicina,  NombreMedicina, Marca, Proveedor, Caducidad) {
-        this._idMedicina = IdMedicina;
-        this._nombreMedicina = NombreMedicina;
-        this._marca = Marca;
-        this._proveedor = Proveedor;
-        this._caducidad = Caducidad;
+    
+    constructor(NombreMedicina,Proveedor) {
+        this.NombreMedicina = NombreMedicina;
+        this.Proveedor = Proveedor;
     }
 }
+var medicamento = [];
+function agregarMedicina(){
+    this.NombreMedicina = document.getElementById("Medicina").value;
+    this.Proveedor = document.getElementById("Proveedor").value;
+    let medi = new Medicina(NombreMedicina,Proveedor);
+    medicamento.push(medi);
+    alert("Medicina agregada")
+}
+function mostrarMedicinas(){
+        for(i=0; i<medicamento.length; i++){
+            console.log(medicamento[i]);
+        }
+    } 
+
+
+
+  

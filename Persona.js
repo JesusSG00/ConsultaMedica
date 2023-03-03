@@ -24,14 +24,10 @@ class Persona {
         this.Telefono = Telefono;
         this.FechaNac = FechaNac;
     } 
-
-    
-
 }
 
 function fullName(){
-       let fullname = "El nombre es "&this.Nombre&this.ApellidoM&this.ApellidoP;
-       return fullname; 
+    return `${this.Nombre} ${this.ApellidoP} ${this.ApellidoM}`;
     }
 
 

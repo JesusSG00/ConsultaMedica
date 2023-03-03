@@ -25,4 +25,12 @@ class Paciente extends Persona{
         let n_consultas = this.consulta.lenght;
         return this.fullName()+", ID: "+ this.Id+" consultas:"+n_consultas
     }
-}
+
+    
+} 
+function NombrePaciente(){
+    this.Nombre = document.getElementById("Nombre").value;
+    this.ApellidoP= document.getElementById("ApellidoP").value;
+    this.ApellidoM = document.getElementById("ApellidoM").value;
+    return `${this.Nombre} ${this.ApellidoP} ${this.ApellidoM}`;
+        }

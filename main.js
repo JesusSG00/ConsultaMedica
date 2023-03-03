@@ -39,8 +39,12 @@ function mostrarMedico (){
         console.log(medico[i]);
 
     }
-
+    
 } 
+
+
+
+
 
 
 

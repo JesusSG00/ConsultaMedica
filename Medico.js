@@ -19,6 +19,10 @@ class Medico extends Persona{
         this._cedula = Cedula;
     }
 
-   // agregar consulta
+}
+
+function agregarConsulta(){
 
 }
+
+

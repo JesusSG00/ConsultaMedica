@@ -61,70 +61,131 @@
 <tr>
   <th>  
     <center>
-      <button onclick="guardarPaciente()">Guardar Paciente</button>  
-      <button onclick="mostrarPaciente()">Mostrar</button>
-      <button onclick="fullname()">Mostrar nombre completo</button>
+      <button onclick="guardarPaciente()"class="btn btn-primary">Guardar Paciente</button>  
+      <button onclick="mostrarPaciente()"class="btn btn-secondary">Mostrar Paciente</button>
+      <button onclick="NombrePaciente()"class="btn btn-info">Mostrar nombre completo</button>
     </center>
     <script src="Persona.js"></script>
     <script src="Medico.js"></script>
     <script src="Paciente.js"></script>
+    <script src="Medicina.js"></script>
+    <script src="Consulta.js"></script>
     <script src="main.js"></script>
     
   </th>
 </tr>
 </table>
-
 <hr>
 <h1>Medico</h1>
 <table class="table">
 
-
+  <th scope="col"><div class="form-floating mb-3">
+    <input type="text" class="form-control" id="NombreMed">
+      <label for="floatingInput">Nombre</label>
+    </div><br></th>
+    <th scope="col"><div class="form-floating mb-3">
+      <input type="text" class="form-control" id="ApellidoPMed">
+      <label for="floatingInput">Apellido Paterno</label>
+    </div><br></th>
+    <th scope="col"><div class="form-floating mb-3">
+      <input type="text" class="form-control" id="ApellidoMMed">
+      <label for="floatingInput">Apellido Materno</label>
+    </div></th>
+    <th scope="col">
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="DireccionMed">
+        <label for="floatingInput">Direccion</label>
+      </div><br>
+    </th>
+    </tr>
+    <tr>
+      <th scope="col">
+        <div class="form-floating mb-3">
+          <input type="number" class="form-control" id="CpMed">
+          <label for="floatingInput">Codigo Postal</label>
+        </div>    
+      </th>
+      <th scope="col">
+        <div class="form-floating mb-3">
+          <input type="number" class="form-control" id="TelefonoMed">
+          <label for="floatingInput">Telefono</label>
+        </div><br>
+      </th>
+      <th scope="col">
+        <div class="form-floating mb-3">
+          <input type="date" class="form-control" id="FechaNacMed">
+          <label for="floatingInput">Fecha de Nacimiento</label>
+        </div></th>
+        <th scope="col">  <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="CedulaMed">
+          <label for="floatingInput">Cedula</label>
+        </div> <br></th>
+  <tr>
+    <th scope="col">
+      <center>
+        <button onclick="guardarMedico()" class="btn btn-primary">Guardar Medico</button>  
+       <button onclick="mostrarMedico()" class="btn btn-secondary">Mostrar</button>
+      </center>
+      
+      </th>
+  </tr>
+       
+       <hr>
+       <tr>
+    
+    
+    
 
   
 </table>
-<input type="text" class="form-control" id="NombreMed">
-  <label for="floatingInput">Nombre</label>
-</div></th>
-<th scope="col"><div class="form-floating">
-  <input type="text" class="form-control" id="ApellidoPMed">
-  <label for="floatingPassword">Apellido Paterno</label>
-</div><br></th>
-<th scope="col"><div class="form-floating mb-3">
-  <input type="text" class="form-control" id="ApellidoMMed">
-  <label for="floatingInput">Apellido Materno</label>
-</div></th>
-<th scope="col">
+    <h1>Medicinas</h1>
+    <table class="table">
+      <tr>
+      <th scope="col"><div class="form-floating mb-3">
+        <input type="text" class="form-control" id="Medicina">
+        <label for="floatingInput">Nombre de Medicina</label>
+      </div></th>
+      <th scope="col"><div class="form-floating">
+        <input type="text" class="form-control" id="Proveedor">
+        <label for="floatingInput">Proveedor</label>
+      </div><br></th>
+    <tr>
+      <th scope="col">
+        <button onclick="agregarMedicina()"class="btn btn-primary">Guardar</button>
+        <button onclick="mostrarMedicinas()"class="btn btn-secondary">Mostrar Medicinas</button>
+      </th>
+    </tr>
+      </table>
+   <hr>
+   <h1>Consulta</h1>
+   <table class="table">
+   <tr>
+   <th scope="col"><div class="form-floating mb-3">
+     <input type="text" class="form-control" id="NombrePaciente">
+     <label for="floatingInput">Nombre del paciente</label>
+   </div></th>
+   <th scope="col"><div class="form-floating mb-3">
+     <input type="text" class="form-control" id="FolioPaciente">
+     <label for="floatingInput">Folio del paciente</label>
+   </div><br></th>
+   <th scope="col"><div class="form-floating mb-3">
+     <input type="text" class="form-control" id="MedicoTurno">
+     <label for="floatingInput">Medico en turno</label>
+   </div></th>
+<th>
   <div class="form-floating">
-    <input type="text" class="form-control" id="DireccionMed">
-    <label for="floatingInput">Direccion</label>
-  </div><br>
+    <input type="text" class="form-control" id="MedicinaR">
+    <label for="floatingInput">Medicina</label>
 </th>
-</tr>
-<tr>
+
+  </tr>
   <th scope="col">
-    <div class="form-floating mb-3">
-      <input type="number" class="form-control" id="CpMed">
-      <label for="floatingInput">Codigo Postal</label>
-    </div>    
+    <center>
+      <button onclick="agregarConsulta()"class="btn btn-primary">Guardar Consulta</button>
+      <button onclick="mostrarConsultas()"class="btn btn-secondary">Mostrar Consulta</button>
+    </center>
   </th>
-  <th scope="col">
-    <div class="form-floating">
-      <input type="number" class="form-control" id="TelefonoMed">
-      <label for="floatingInput">Telefono</label>
-    </div><br>
-  </th>
-  <th scope="col">
-    <div class="form-floating">
-      <input type="date" class="form-control" id="FechaNacMed">
-      <label for="floatingInput">Fecha de Nacimiento</label>
-    </div>
-<div class="form-floating">
-  <input type="text" class="form-control" id="CedulaMed">
-  <label for="floatingPassword">Cedula</label>
-</div> <br>
-   <button onclick="guardarMedico()">Guardar Medico</button>  
-   <button onclick="mostrarMedico()">Mostrar</button>
-   
+       
    
    
 </body>
