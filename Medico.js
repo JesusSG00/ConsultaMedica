@@ -9,20 +9,15 @@ class Medico extends Persona{
   
     constructor(Nombre, ApellidoP, ApellidoM, Direccion, Cp, Telefono,FechaN, IdMedico,Cedula){
         super(Nombre, ApellidoP, ApellidoM, Direccion, Cp, Telefono,FechaN);
-        this.Nombre = Nombre;
-        this.ApellidoP = ApellidoP;
-        this.ApellidoM = ApellidoM;
-        this.Direccion = Direccion;
-        this.Cp = Cp;
-        this.Telefono = Telefono;
-        this.FechaNac = FechaNac;
-        this._cedula = Cedula;
+        this.IdMedico = IdMedico;
+        this.Cedula = Cedula;
     }
 
+datosMedico = function(){
+    return `ID:${this.IdMedico} Nombre Completo:${this.Nombre} ${this.ApellidoP} ${this.ApellidoM} Telefono:${this.Telefono}  Cedula:${this.Cedula}`;
 }
 
-function agregarConsulta(){
-
 }
+
 
 

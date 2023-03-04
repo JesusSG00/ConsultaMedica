@@ -11,19 +11,17 @@ function guardarPaciente(){
     this.FolioPaciente= document.getElementById("FolioPaciente").value;
     let pa1 = new Paciente(this.Nombre,this.ApellidoP,this.ApellidoM,this.Direccion,this.Cp,this.Telefono,this.FechaNac,this.FolioPaciente);
     pacientes.push(pa1);
-    let text = '';
-    pacientes.forEach(pac=>{
-        text += `El nombre del paciente es: ${pac.fullName()}<hr>`;
-    })
-    let ejemplo = document.getElementById('ejemplo');
-    ejemplo.innerHTML = text
     alert("Guardado");
 }
 
 function mostrarPaciente(){
-    for(i=0;i<pacientes.length;i++){
-        console.log(pacientes[i]);
-    }
+    let text = '';
+    pacientes.forEach(pac=>{
+         text += `<tr scope='col'><td>${pac.fullName()}</td></tr>`;   
+    });
+    let cuerpoTabla = document.getElementById('cuerpo-tabla');
+    cuerpoTabla.innerHTML = text;
+    alert("Mostrando...");
 }
 
 function guardarMedico(){
@@ -34,18 +32,25 @@ function guardarMedico(){
     this.Cp= document.getElementById("CpMed").value;
     this.Telefono= document.getElementById("TelefonoMed").value;
     this.FechaNac= document.getElementById("FechaNacMed").value;
+    this.IdMedico = generador();
     this.Cedula= document.getElementById("CedulaMed").value;
- let med= new Medico(Nombre, ApellidoP, ApellidoM, Direccion, Cp, Telefono,FechaNac, this.IdMedico, this.Cedula);
+ let med= new Medico(Nombre, ApellidoP, ApellidoM, Direccion, Cp, Telefono,FechaNac, IdMedico,Cedula);
 medicos.push(med);
-console.log("Guardado");
+alert("Guardado");
 }
 
 function mostrarMedico (){
-    for(i=0; i<medicos.length; i++){
-        console.log(medicos[i]);
-    }
+    let text = '';
+    medicos.forEach(med=>{
+         text += `<tr><td>${med.datosMedico()}</td></tr>`;   
+    });
+    let cuerpoTabla = document.getElementById('cuerpo-tabla-medicos');
+    cuerpoTabla.innerHTML = text;
+    alert("Mostrando...");
     
 } 
+
+
 
 
 

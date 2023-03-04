@@ -28,7 +28,11 @@
   <div class="form-floating">
     <input type="text" class="form-control" id="Direccion">
     <label for="floatingInput">Direccion</label>
-  </div><br>
+  </div>
+ 
+   
+  
+  <br>
 </th>
 </tr>
 <tr>
@@ -55,28 +59,38 @@
       <div class="form-floating">
       <input type="text" class="form-control" id="FolioPaciente">
       <label for="floatingInput">Folio Paciente</label>
-    </div></th>
-    
-</tr>
-<tr>
-  <th>  
-    <center>
-      <button onclick="guardarPaciente()"class="btn btn-primary">Guardar Paciente</button>  
-      <button onclick="mostrarPaciente()"class="btn btn-secondary">Mostrar Paciente</button>
-    </center>
- 
-    <div class="table-responsive">
-      <table class="table">
-        <tr>
-          <th scope="col" id="ejemplo">
-          </th>
-        </tr>
-      </table>
+     
     </div>
+  <th scope="col">
+    <button onclick="guardarPaciente()"class="btn btn-primary">Guardar Paciente</button>  
+     <button onclick="mostrarPaciente()"class="btn btn-secondary">Mostrar todos los nombres completos</button>
+     <button onclick=""class="btn btn-info">Mostrar todos los datos</button>
+  </th>
   </th>
 </tr>
 </table>
-<hr>
+<th scope="col">
+  <table class="table table-sm">
+  <thead> 
+    <tr>
+      <th>Nombre Completo</th>
+    </tr>
+  </thead>
+  <tbody id="cuerpo-tabla"></tbody>
+  </table> 
+</th>
+<th scope="col">
+  <table class="table table-sm">
+  <thead>
+    <tr>
+      <th>Datos completos</th>
+    </tr>
+  </thead>
+  <tbody id="cuerpo-tabla"></tbody>
+  </table> 
+</th>
+  
+  <br><br><br>
 <h1>Medico</h1>
 <table class="table">
 
@@ -120,25 +134,27 @@
         <th scope="col">  <div class="form-floating mb-3">
           <input type="text" class="form-control" id="CedulaMed">
           <label for="floatingInput">Cedula</label>
-        </div> <br></th>
+
+        </div></th><tr><th scope="col">
+          <button onclick="guardarMedico()" class="btn btn-primary">Guardar Medico</button>  
+          <button onclick="mostrarMedico()" class="btn btn-secondary">Mostrar datos de los medicos</button>
+    
+        </th></tr>
   <tr>
     <th scope="col">
-      <center>
-        <button onclick="guardarMedico()" class="btn btn-primary">Guardar Medico</button>  
-       <button onclick="mostrarMedico()" class="btn btn-secondary">Mostrar</button>
-      </center>
-      
+        <div class="table-responsive">
+          <table class="table table-sm">
+      <thead>
+        <tr>
+          <th>Datos de los Medicos</th>
+        </tr>
+      </thead>
+      <tbody id="cuerpo-tabla-medicos"></tbody>
+      </table> 
+        </div>
       </th>
   </tr>
-       
-       <hr>
-       <tr>
-    
-    
-    
-
-  
-</table>
+</table><br><br><br>
     <h1>Medicinas</h1>
     <table class="table">
       <tr>
@@ -187,7 +203,7 @@
     </center>
   </th>
        
-   
+    <script src="auxiliar.js"></script>
     <script src="Persona.js"></script>
     <script src="Medico.js"></script>
     <script src="Paciente.js"></script>
