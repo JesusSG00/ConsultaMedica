@@ -24,11 +24,12 @@ class Persona {
         this.Telefono = Telefono;
         this.FechaNac = FechaNac;
     } 
+    fullName = function(){
+        return `${this.Nombre} ${this.ApellidoP} ${this.ApellidoM}`;
+        }
 }
 
-function fullName(){
-    return `${this.Nombre} ${this.ApellidoP} ${this.ApellidoM}`;
-    }
+
 
 
 

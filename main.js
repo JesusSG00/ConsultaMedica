@@ -1,5 +1,5 @@
-var paciente = [];
-var medico =[];
+var pacientes = [];
+var medicos =[];
 function guardarPaciente(){
     this.Nombre = document.getElementById("Nombre").value;
     this.ApellidoP= document.getElementById("ApellidoP").value;
@@ -10,13 +10,19 @@ function guardarPaciente(){
     this.FechaNac= document.getElementById("FechaNac").value;
     this.FolioPaciente= document.getElementById("FolioPaciente").value;
     let pa1 = new Paciente(this.Nombre,this.ApellidoP,this.ApellidoM,this.Direccion,this.Cp,this.Telefono,this.FechaNac,this.FolioPaciente);
-    paciente.push(pa1);
+    pacientes.push(pa1);
+    let text = '';
+    pacientes.forEach(pac=>{
+        text += `El nombre del paciente es: ${pac.fullName()}<hr>`;
+    })
+    let ejemplo = document.getElementById('ejemplo');
+    ejemplo.innerHTML = text
     alert("Guardado");
 }
 
 function mostrarPaciente(){
-    for(i=0;i<paciente.length;i++){
-        console.log(paciente[i]);
+    for(i=0;i<pacientes.length;i++){
+        console.log(pacientes[i]);
     }
 }
 
@@ -30,14 +36,13 @@ function guardarMedico(){
     this.FechaNac= document.getElementById("FechaNacMed").value;
     this.Cedula= document.getElementById("CedulaMed").value;
  let med= new Medico(Nombre, ApellidoP, ApellidoM, Direccion, Cp, Telefono,FechaNac, this.IdMedico, this.Cedula);
-medico.push(med);
+medicos.push(med);
 console.log("Guardado");
 }
 
 function mostrarMedico (){
-    for(i=0; i<medico.length; i++){
-        console.log(medico[i]);
-
+    for(i=0; i<medicos.length; i++){
+        console.log(medicos[i]);
     }
     
 } 

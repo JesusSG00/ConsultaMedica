@@ -26,9 +26,7 @@ function asignarMedico(){
 function agregarConsulta(){
 this.FolioPaciente = document.getElementById("FolioPaciente").value;
 this.MedicinaR = document.getElementById("MedicinaR").value;
-NombrePaciente = asignarPaciente();
-MedicoT = asignarMedico();
-let con = new Consulta(NombrePaciente,FolioPaciente,MedicoT,MedicinaR);
+let con = new Consulta(asignarPaciente(),asignarMedico(),MedicoT,MedicinaR);
 consulta.push(con);
 alert("Consulta Agregada");
 }

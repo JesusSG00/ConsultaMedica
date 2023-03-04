@@ -6,13 +6,6 @@ class Paciente extends Persona{
     */
     constructor(Nombre, ApellidoP, ApellidoM, Direccion, Cp, Telefono,FechaNac,FolioPaciente){
         super(Nombre, ApellidoP, ApellidoM, Direccion, Cp, Telefono,FechaNac);
-        this.Nombre = Nombre;
-        this.ApellidoP = ApellidoP;
-        this.ApellidoM = ApellidoM;
-        this.Direccion = Direccion;
-        this.Cp = Cp;
-        this.Telefono = Telefono;
-        this.FechaNac = FechaNac;
         this.FolioPaciente = FolioPaciente;
     }
 
@@ -28,9 +21,3 @@ class Paciente extends Persona{
 
     
 } 
-function NombrePaciente(){
-    this.Nombre = document.getElementById("Nombre").value;
-    this.ApellidoP= document.getElementById("ApellidoP").value;
-    this.ApellidoM = document.getElementById("ApellidoM").value;
-    return `${this.Nombre} ${this.ApellidoP} ${this.ApellidoM}`;
-        }
