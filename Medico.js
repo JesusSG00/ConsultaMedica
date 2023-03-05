@@ -13,10 +13,6 @@ class Medico extends Persona{
         this.Cedula = Cedula;
     }
 
-datosMedico = function(){
-    return `ID:${this.IdMedico} Nombre Completo:${this.Nombre} ${this.ApellidoP} ${this.ApellidoM} Telefono:${this.Telefono}  Cedula:${this.Cedula}`;
-}
-
 }
 
 

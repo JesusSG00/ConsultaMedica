@@ -60,7 +60,7 @@
 </th>
 <!--CUERPO DE TABLA QUE MUESTRA TODOS LOS PACIENTES-->
 <div> 
-<th scope="col" style="position: relative; top: -85px;">
+<th scope="col" style="position: relative; top: -4.24cm;">
 <div class="table-responsive">
 <table class="table table-bordered"">
 <thead>
@@ -75,18 +75,17 @@
 </tr>
 <tbody id="cuerpo-tabla-pacientes"></tbody>
 </table> 
+<button onclick="guardarPaciente()"class="btn btn-primary">Guardar Paciente</button>
+<button onclick="datosPacientes()"class="btn btn-secondary"">Mostrar en tabla</button> 
 </div>
 </th> 
 </div>
-<tr>
-<button onclick="guardarPaciente()"class="btn btn-primary">Guardar Paciente</button>
-<button onclick="datosPacientes()"class="btn btn-secondary"">Mostrar en tabla</button>
-</tr>
 </div>
+<!--FIN DE PACIENTES-->
 <!--INICIO DE TABLA DE MEDICOS-->
 </table> 
 <!--FIN DE LA TABLA-->
-<div style="width: 70%;">
+<div style="width: 80%;">
 <h1>Medico</h1>
 <table class="table">
 <th scope="col"><div class="form-floating mb-3">
@@ -132,7 +131,7 @@
 </div></th>
 <div>
 <tr>
-<th scope="col" style="position: relative; top: -6cm; left: 101%;">
+<th scope="col" style="position: relative; top: -8.1cm; left: 101%;">
 <div class="table-responsive">
 <table class="table table-bordered">
 <thead>
@@ -149,16 +148,18 @@
 </tr>
 <tbody id="cuerpo-tabla-medicos"></tbody>
 </table> 
+<!--BOTONES GUARDAR Y MOSTRAR DATOS DE LOS MEDICOS-->
+<button onclick="guardarMedico()" class="btn btn-primary">Guardar Medico</button>  
+<button onclick="mostrarMedico()" class="btn btn-secondary">Mostrar datos de los medicos</button> 
 </div>
 </th>
 </tr>
 </div>
-<!--BOTONES GUARDAR Y MOSTRAR DATOS DE LOS MEDICOS-->
-<button onclick="guardarMedico()" class="btn btn-primary">Guardar Medico</button>  
-<button onclick="mostrarMedico()" class="btn btn-secondary">Mostrar datos de los medicos</button> 
 </tr>
 </table>
 </div>
+<!--FIN DE MEDICOS-->
+<!--INICIO DE MEDICINAS-->
 <h1>Medicinas</h1>
 <table class="table">
 <tr>
@@ -169,63 +170,55 @@
 <th scope="col"><div class="form-floating">
 <input type="text" class="form-control" id="Proveedor">
 <label for="floatingInput">Proveedor</label>
-</div><br></th>
-<tr>
-<th scope="col">
+</div></th>
 <button onclick="agregarMedicina()"class="btn btn-primary">Guardar</button>
 <button onclick="mostrarMedicinas()"class="btn btn-secondary">Mostrar Medicinas</button>
-</th>
-</tr>
 </table>
-<div style="width: 110%;">
-    <h1>Consulta</h1>
-    <table class="table">
-    <tr>
-    <th scope="col"><div class="form-floating mb-3">
-    <input type="text" class="form-control" id="NombrePaciente">
-    <label for="floatingInput">Nombre del paciente</label>
-    </div></th>
-    <th scope="col"><div class="form-floating mb-3">
-    <input type="text" class="form-control" id="FolioPaciente">
-    <label for="floatingInput">Folio del paciente</label>
-    </div></th>
-    <th scope="col"><div class="form-floating mb-3">
-    <input type="text" class="form-control" id="MedicoTurno">
-    <label for="floatingInput">Medico en turno</label>
-    </div></th>
-    <th>
-    <div class="form-floating">
-    <input type="text" class="form-control" id="MedicinaR">
-    <label for="floatingInput">Medicina</label>
-    </th>
-    <div> 
-        <th scope="col" style="position: relative; top: -85px;">
-        <div class="table-responsive">
-        <table class="table table-bordered"">
-        <thead>
-        <tr>
-        <th><h5>Todas las consultas</h5></th>
-        </tr>
-        </thead>
-        <tr>
-        <th scope="col">Nombre Completo</th>
-        <th scope="col">Folio del Paciente</th>
-        <th scope="col">Medico que atendio</th>
-        <th scope="col">Medicina Recetada</th>
-        </tr>
-        <tbody id="cuerpo-tabla-consultas"></tbody>
-        </table> 
-        </div>
-        </th> 
-        </div>
-    </tr>
-</div>
-<th scope="col">
-<center>
+<div style="width: 120%;">
+<h1>Consulta</h1>
+<table class="table">
+<tr>
+<th scope="col"><div class="form-floating mb-3">
+<input type="text" class="form-control" id="NombrePaciente">
+<label for="floatingInput">Nombre del paciente</label>
+</div></th>
+<th scope="col"><div class="form-floating mb-3">
+<input type="number" class="form-control" id="FolioPaciente">
+<label for="floatingInput">Folio del paciente</label>
+</div></th>
+<th scope="col"><div class="form-floating mb-3">
+<input type="text" class="form-control" id="MedicoTurno">
+<label for="floatingInput">Medico en turno</label>
+</div></th>
+<th>
+<div class="form-floating">
+<input type="text" class="form-control" id="MedicinaR">
+<label for="floatingInput">Medicina</label>
+</th>
+<div> 
+<th scope="col" style="position: relative; top: -60px;">
+<div class="table-responsive">
+<table class="table table-bordered"">
+<thead>
+<tr>
+<th><h5>Todas las consultas</h5></th>
+</tr>
+</thead>
+<tr>
+<th scope="col">Nombre Completo</th>
+<th scope="col">Folio del Paciente</th>
+<th scope="col">Medico que atendio</th>
+<th scope="col">Medicina Recetada</th>
+</tr>
+<tbody id="cuerpo-tabla-consultas"></tbody>
+</table> 
 <button onclick="agregarConsulta()"class="btn btn-primary">Guardar Consulta</button>
 <button onclick="mostrarConsultas()"class="btn btn-secondary">Mostrar Consulta</button>
-</center>
-</th>
+</div>
+</th> 
+</div>
+</tr>
+</div>
 <script src="auxiliar.js"></script>
 <script src="Persona.js"></script>
 <script src="Medico.js"></script>

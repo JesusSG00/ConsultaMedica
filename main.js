@@ -43,21 +43,27 @@ function guardarMedico(){
     this.Cedula= document.getElementById("CedulaMed").value;
  let med= new Medico(Nombre, ApellidoP, ApellidoM, Direccion, Cp, Telefono,FechaNac, IdMedico,Cedula);
 medicos.push(med);
+agregarLocalStorage("Medicos",JSON.stringify(medicos));
 alert("Guardado");
 }
 
-function mostrarMedico (){
-    let text = '';
-    medicos.forEach(med=>{
-         text += `<tr>
-         <td scope="row">${med.IdMedico}</td>
-         <td>${med.fullName()}</td>
-         <td>${med.Telefono}</td>
-         <td>${med.Cedula}</td>
-         </tr>`;  
-    });
-    let cuerpoTablaMedico = document.getElementById('cuerpo-tabla-medicos');
-    cuerpoTablaMedico.innerHTML = text;
+function mostrarMedico(){
+    var medicosGuardados = sacarLocalStorage("Medicos");
+    if(medicosGuardados){
+medicos = JSON.parse(medicosGuardados);
+ let text = '';
+        for(let i=0;i<medicos.length;i++){
+            text += `<tr>
+            <td scope="row">${medicos[i].IdMedico}</td>
+            <td>${medicos[i].Nombre +" "+ medicos[i].ApellidoP + " " +medicos[i].ApellidoM}</td>
+            <td>${medicos[i].Telefono}</td>
+            <td>${medicos[i].Cedula}</td>
+            </tr>`;  
+        }  
+        document.getElementById('cuerpo-tabla-medicos').innerHTML = text;
+    }else{
+        document.getElementById('cuerpo-tabla-medicos').innerHTML = 'No hay datos guardados';
+    }
     alert("Mostrando...");
     
 } 

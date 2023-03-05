@@ -3,6 +3,13 @@ class Consulta{
     FolioPaciente;
     MedicoT;
     MedicinaR;
+    /**
+     * 
+     * @param {String} NombrePaciente 
+     * @param {Int} FolioPaciente 
+     * @param {String} MedicoT 
+     * @param {String} MedicinaR 
+     */
     constructor(NombrePaciente,FolioPaciente,MedicoT,MedicinaR){
         this.NombrePaciente = NombrePaciente;
         this.FolioPaciente= FolioPaciente;
@@ -10,7 +17,6 @@ class Consulta{
         this.MedicinaR = MedicinaR;
      
     }
-
 }
 var consulta=[];
 function asignarPaciente() {
@@ -36,8 +42,8 @@ function mostrarConsultas(){
   var consultasGuardadas = sacarLocalStorage("Consulta");
   if (consultasGuardadas) {
     consulta = JSON.parse(consultasGuardadas);
-    var resultado = '';
-    for(var i = 0; i < consulta.length; i++) {
+    let resultado = '';
+    for(let i = 0; i < consulta.length; i++) {
       resultado+= `<tr>
       <td scope="row">${consulta[i].NombrePaciente}</td>
       <td>${consulta[i].FolioPaciente}</td>
@@ -49,5 +55,6 @@ function mostrarConsultas(){
   } else {
     document.getElementById('cuerpo-tabla-consultas').innerHTML = 'No hay consultas guardadas.';
   }
+  alert("Mostrando");
 }
 
