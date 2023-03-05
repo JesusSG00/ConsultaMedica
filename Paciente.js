@@ -1,13 +1,23 @@
 class Paciente extends Persona{
-    Id;
     FolioPaciente;
+    Consulta = [];
    /**
-    * @param {Int} Id 
     * @param {String} FolioPaciente 
     */
-    constructor(Id,FolioPaciente){
+    constructor(Nombre, ApellidoP, ApellidoM, Direccion, Cp, Telefono,FechaNac,FolioPaciente){
         super(Nombre, ApellidoP, ApellidoM, Direccion, Cp, Telefono,FechaNac);
-        this._id = Id;
-        this._folioPaciente = FolioPaciente;
+        this.FolioPaciente = FolioPaciente;
     }
-}
+
+    agregarConsulta(consulta){
+        let consultas = this.Consulta;
+        consultas.push(consulta);
+    }
+
+    expediente(){
+        let n_consultas = this.consulta.lenght;
+        return this.fullName()+", ID: "+ this.Id+" consultas:"+n_consultas
+    }
+
+    
+} 
