@@ -30,7 +30,7 @@ function asignarMedico(){
 }
 
 function agregarConsulta(){
-this.FolioPaciente = document.getElementById("FolioPaciente").value;
+this.FolioPaciente = document.getElementById("FolioPacienteC").value;
 this.MedicinaR = document.getElementById("MedicinaR").value;
 let con = new Consulta(asignarPaciente(),FolioPaciente,asignarMedico(),MedicinaR);
 consulta.push(con);
