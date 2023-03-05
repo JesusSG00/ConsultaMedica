@@ -28,13 +28,26 @@ this.FolioPaciente = document.getElementById("FolioPaciente").value;
 this.MedicinaR = document.getElementById("MedicinaR").value;
 let con = new Consulta(asignarPaciente(),FolioPaciente,asignarMedico(),MedicinaR);
 consulta.push(con);
+agregarLocalStorage("Consulta",JSON.stringify(consulta));
 alert("Consulta Agregada");
 }
 
 function mostrarConsultas(){
-    for(i=0; i<consulta.length; i++){
-        console.log(consulta[i]);
-
+  var consultasGuardadas = sacarLocalStorage("Consulta");
+  if (consultasGuardadas) {
+    consulta = JSON.parse(consultasGuardadas);
+    var resultado = '';
+    for(var i = 0; i < consulta.length; i++) {
+      resultado+= `<tr>
+      <td scope="row">${consulta[i].NombrePaciente}</td>
+      <td>${consulta[i].FolioPaciente}</td>
+      <td>${consulta[i].MedicoT}</td>
+      <td>${consulta[i].MedicinaR}</td>
+      </tr>`
     }
+    document.getElementById('cuerpo-tabla-consultas').innerHTML = resultado;
+  } else {
+    document.getElementById('cuerpo-tabla-consultas').innerHTML = 'No hay consultas guardadas.';
+  }
 }
 

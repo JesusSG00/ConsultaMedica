@@ -9,9 +9,7 @@
 <title>Consultorio</title>
 </head>
 <body>
-<!--
-PRIMERA TABLA DE PACIENTES
--->
+<!--PRIMERA TABLA DE PACIENTES-->
 <div style="width: 75%;">
 <h1>Paciente</h1>
 <table class="table">
@@ -88,7 +86,6 @@ PRIMERA TABLA DE PACIENTES
 <!--INICIO DE TABLA DE MEDICOS-->
 </table> 
 <!--FIN DE LA TABLA-->
-
 <div style="width: 70%;">
 <h1>Medico</h1>
 <table class="table">
@@ -140,6 +137,7 @@ PRIMERA TABLA DE PACIENTES
 <table class="table table-bordered">
 <thead>
 <tr>
+<!--TABLA DE LOS DATOS DE LOS MEDICOS-->
 <th><h5>Datos de los Medicos</h5></th>
 </tr>
 </thead>
@@ -155,6 +153,7 @@ PRIMERA TABLA DE PACIENTES
 </th>
 </tr>
 </div>
+<!--BOTONES GUARDAR Y MOSTRAR DATOS DE LOS MEDICOS-->
 <button onclick="guardarMedico()" class="btn btn-primary">Guardar Medico</button>  
 <button onclick="mostrarMedico()" class="btn btn-secondary">Mostrar datos de los medicos</button> 
 </tr>
@@ -178,29 +177,49 @@ PRIMERA TABLA DE PACIENTES
 </th>
 </tr>
 </table>
-<hr>
-<h1>Consulta</h1>
-<table class="table">
-<tr>
-<th scope="col"><div class="form-floating mb-3">
-<input type="text" class="form-control" id="NombrePaciente">
-<label for="floatingInput">Nombre del paciente</label>
-</div></th>
-<th scope="col"><div class="form-floating mb-3">
-<input type="text" class="form-control" id="FolioPaciente">
-<label for="floatingInput">Folio del paciente</label>
-</div><br></th>
-<th scope="col"><div class="form-floating mb-3">
-<input type="text" class="form-control" id="MedicoTurno">
-<label for="floatingInput">Medico en turno</label>
-</div></th>
-<th>
-<div class="form-floating">
-<input type="text" class="form-control" id="MedicinaR">
-<label for="floatingInput">Medicina</label>
-</th>
-
-</tr>
+<div style="width: 110%;">
+    <h1>Consulta</h1>
+    <table class="table">
+    <tr>
+    <th scope="col"><div class="form-floating mb-3">
+    <input type="text" class="form-control" id="NombrePaciente">
+    <label for="floatingInput">Nombre del paciente</label>
+    </div></th>
+    <th scope="col"><div class="form-floating mb-3">
+    <input type="text" class="form-control" id="FolioPaciente">
+    <label for="floatingInput">Folio del paciente</label>
+    </div></th>
+    <th scope="col"><div class="form-floating mb-3">
+    <input type="text" class="form-control" id="MedicoTurno">
+    <label for="floatingInput">Medico en turno</label>
+    </div></th>
+    <th>
+    <div class="form-floating">
+    <input type="text" class="form-control" id="MedicinaR">
+    <label for="floatingInput">Medicina</label>
+    </th>
+    <div> 
+        <th scope="col" style="position: relative; top: -85px;">
+        <div class="table-responsive">
+        <table class="table table-bordered"">
+        <thead>
+        <tr>
+        <th><h5>Todas las consultas</h5></th>
+        </tr>
+        </thead>
+        <tr>
+        <th scope="col">Nombre Completo</th>
+        <th scope="col">Folio del Paciente</th>
+        <th scope="col">Medico que atendio</th>
+        <th scope="col">Medicina Recetada</th>
+        </tr>
+        <tbody id="cuerpo-tabla-consultas"></tbody>
+        </table> 
+        </div>
+        </th> 
+        </div>
+    </tr>
+</div>
 <th scope="col">
 <center>
 <button onclick="agregarConsulta()"class="btn btn-primary">Guardar Consulta</button>
