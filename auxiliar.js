@@ -4,14 +4,11 @@ function generador(){
     let id;
     id = Math.floor(Math.random() * 500) + 1;
     for(var i=0;i<ids.length;i++){
-        for(var j=0;j<ids.length;j++){
-         if(id==ids[j]){
+         if(id==ids[i]){
           id = Math.floor(Math.random() * 500) + 1;  
         }else{
             return id;
         }   
-     }
-        
     }
     return id;
 }
