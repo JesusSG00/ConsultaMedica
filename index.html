@@ -64,9 +64,23 @@
   <th scope="col">
     <button onclick="guardarPaciente()"class="btn btn-primary">Guardar Paciente</button>  
      <button onclick="mostrarPaciente()"class="btn btn-secondary">Mostrar todos los nombres completos</button>
-     <button onclick=""class="btn btn-info">Mostrar todos los datos</button>
+     <button onclick="datosPacientes()"class="btn btn-info">Mostrar todos los datos</button>
   </th>
   </th>
+</tr>
+<tr>
+  <th scope="col">
+      <div class="table-responsive">
+        <table class="table table-sm">
+    <thead>
+      <tr>
+        <th>Datos de los pacientes</th>
+      </tr>
+    </thead>
+    <tbody id="cuerpo-tabla-pacientes"></tbody>
+    </table> 
+      </div>
+    </th>
 </tr>
 </table>
 <th scope="col">
@@ -74,16 +88,6 @@
   <thead> 
     <tr>
       <th>Nombre Completo</th>
-    </tr>
-  </thead>
-  <tbody id="cuerpo-tabla"></tbody>
-  </table> 
-</th>
-<th scope="col">
-  <table class="table table-sm">
-  <thead>
-    <tr>
-      <th>Datos completos</th>
     </tr>
   </thead>
   <tbody id="cuerpo-tabla"></tbody>

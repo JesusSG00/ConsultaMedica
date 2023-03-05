@@ -1,6 +1,7 @@
 var pacientes = [];
 var medicos =[];
 function guardarPaciente(){
+    this.IdPaciente = generador();
     this.Nombre = document.getElementById("Nombre").value;
     this.ApellidoP= document.getElementById("ApellidoP").value;
     this.ApellidoM = document.getElementById("ApellidoM").value;
@@ -9,18 +10,30 @@ function guardarPaciente(){
     this.Telefono= document.getElementById("Telefono").value;
     this.FechaNac= document.getElementById("FechaNac").value;
     this.FolioPaciente= document.getElementById("FolioPaciente").value;
-    let pa1 = new Paciente(this.Nombre,this.ApellidoP,this.ApellidoM,this.Direccion,this.Cp,this.Telefono,this.FechaNac,this.FolioPaciente);
-    pacientes.push(pa1);
+    let pa1 = new Paciente(IdPaciente,Nombre,ApellidoP,ApellidoM,Direccion,Cp,Telefono,FechaNac,FolioPaciente);
+     pacientes.push(pa1);
+     agregarLocalStorage('Paciente',pacientes);
+
     alert("Guardado");
 }
 
 function mostrarPaciente(){
     let text = '';
     pacientes.forEach(pac=>{
-         text += `<tr scope='col'><td>${pac.fullName()}</td></tr>`;   
+         text += `<tr scope="row"><td>${pac.fullName()}</td></tr>`;   
     });
     let cuerpoTabla = document.getElementById('cuerpo-tabla');
     cuerpoTabla.innerHTML = text;
+    alert("Mostrando...");
+}
+
+function datosPacientes(){
+    let text = '';
+    pacientes.forEach(paci=>{
+         text += `<tr scope="row"><td>${paci.datosPaciente()}</td></tr>`;   
+    });
+    let cuerpoTablaPaciente = document.getElementById('cuerpo-tabla-pacientes');
+    cuerpoTablaPaciente.innerHTML = text;
     alert("Mostrando...");
 }
 
@@ -42,10 +55,10 @@ alert("Guardado");
 function mostrarMedico (){
     let text = '';
     medicos.forEach(med=>{
-         text += `<tr><td>${med.datosMedico()}</td></tr>`;   
+         text += `<tr scope="row"><td>${med.datosMedico()}</td></tr>`;   
     });
-    let cuerpoTabla = document.getElementById('cuerpo-tabla-medicos');
-    cuerpoTabla.innerHTML = text;
+    let cuerpoTablaMedico = document.getElementById('cuerpo-tabla-medicos');
+    cuerpoTablaMedico.innerHTML = text;
     alert("Mostrando...");
     
 } 
