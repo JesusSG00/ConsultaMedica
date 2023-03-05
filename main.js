@@ -16,21 +16,15 @@ function guardarPaciente(){
 
     alert("Guardado");
 }
-
-function mostrarPaciente(){
-    let text = '';
-    pacientes.forEach(pac=>{
-         text += `<tr scope="row"><td>${pac.fullName()}</td></tr>`;   
-    });
-    let cuerpoTabla = document.getElementById('cuerpo-tabla');
-    cuerpoTabla.innerHTML = text;
-    alert("Mostrando...");
-}
-
 function datosPacientes(){
     let text = '';
     pacientes.forEach(paci=>{
-         text += `<tr scope="row"><td>${paci.datosPaciente()}</td></tr>`;   
+         text += `
+         <tr>
+         <td scope="row">${paci.IdPaciente}</td>
+         <td>${paci.fullName()}</td>
+         <td>${paci.FolioPaciente}</td>
+         </tr>`;   
     });
     let cuerpoTablaPaciente = document.getElementById('cuerpo-tabla-pacientes');
     cuerpoTablaPaciente.innerHTML = text;
@@ -55,7 +49,12 @@ alert("Guardado");
 function mostrarMedico (){
     let text = '';
     medicos.forEach(med=>{
-         text += `<tr scope="row"><td>${med.datosMedico()}</td></tr>`;   
+         text += `<tr>
+         <td scope="row">${med.IdMedico}</td>
+         <td>${med.fullName()}</td>
+         <td>${med.Telefono}</td>
+         <td>${med.Cedula}</td>
+         </tr>`;  
     });
     let cuerpoTablaMedico = document.getElementById('cuerpo-tabla-medicos');
     cuerpoTablaMedico.innerHTML = text;
