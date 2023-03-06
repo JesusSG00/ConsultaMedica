@@ -16,12 +16,20 @@ class Persona {
      * @param {Date} FechaNac 
      */
     constructor(Nombre, ApellidoP, ApellidoM, Direccion, Cp, Telefono,FechaNac) {
-        this._nombre = Nombre;
-        this._apellidop = ApellidoP;
-        this._apellidom = ApellidoM;
-        this._direccion = Direccion;
-        this.cp = Cp;
-        this._telefono = Telefono;
-        this._fechaNac = FechaNac;
+        this.Nombre = Nombre;
+        this.ApellidoP = ApellidoP;
+        this.ApellidoM = ApellidoM;
+        this.Direccion = Direccion;
+        this.Cp = Cp;
+        this.Telefono = Telefono;
+        this.FechaNac = FechaNac;
     } 
-} 
+    fullName = function(){
+        return `${this.Nombre} ${this.ApellidoP} ${this.ApellidoM}`;
+        }
+}
+
+
+
+
+
