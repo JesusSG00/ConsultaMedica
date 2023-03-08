@@ -1,6 +1,6 @@
 
 function generador(){
-    const ids=[];
+    let  ids=[];
     let id;
     id = Math.floor(Math.random() * 500) + 1;
     for(var i=0;i<ids.length;i++){
@@ -10,6 +10,7 @@ function generador(){
             return id;
         }   
     }
+    
     return id;
 }
 /**
@@ -23,6 +24,22 @@ function agregarLocalStorage(parametro,dato){
 
 function sacarLocalStorage(parametro){
   return JSON.parse(localStorage.getItem(parametro));
+}
+
+function getUsersFromLocalStorage(){
+  let pacientes = [];
+  let arrayPacientes = sacarLocalStorage('Paciente');
+  if(arrayPacientes != null){
+    if(arrayPacientes.length != 0){
+      arrayPacientes.forEach(pacientearray => {
+            let paciente2 = new Paciente( pacientearray.Nombre, pacientearray.ApellidoP, pacientearray.ApellidoM, pacientearray.Direccion, pacientearray.Cp, pacientearray.Telefono, pacientearray.FechaNac, pacientearray.FolioPaciente);
+            pacientes.push(paciente2);
+        });
+    }
+  }
+  
+  return pacientes;
+
 }
 /*
 function sacarPacientesFromLocalStorage(parameter="pacientes"){

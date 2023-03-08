@@ -76,7 +76,7 @@
 <tbody id="cuerpo-tabla-pacientes"></tbody>
 </table> 
 <button onclick="guardarPaciente()"class="btn btn-primary">Guardar Paciente</button>
-<button onclick="datosPacientes()"class="btn btn-secondary"">Mostrar en tabla</button> 
+<!--<button onclick="datosPacientes()"class="btn btn-secondary">Mostrar en tabla</button> -->
 </div>
 </th> 
 </div>
@@ -150,7 +150,6 @@
 </table> 
 <!--BOTONES GUARDAR Y MOSTRAR DATOS DE LOS MEDICOS-->
 <button onclick="guardarMedico()" class="btn btn-primary">Guardar Medico</button>  
-<button onclick="mostrarMedico()" class="btn btn-secondary">Mostrar datos de los medicos</button> 
 </div>
 </th>
 </tr>
@@ -159,22 +158,7 @@
 </table>
 </div>
 <!--FIN DE MEDICOS-->
-<!--INICIO DE MEDICINAS-->
-<h1>Medicinas</h1>
-<table class="table">
-<tr>
-<th scope="col"><div class="form-floating mb-3">
-<input type="text" class="form-control" id="Medicina">
-<label for="floatingInput">Nombre de Medicina</label>
-</div></th>
-<th scope="col"><div class="form-floating">
-<input type="text" class="form-control" id="Proveedor">
-<label for="floatingInput">Proveedor</label>
-</div></th>
-<button onclick="agregarMedicina()"class="btn btn-primary">Guardar</button>
-<button onclick="mostrarMedicinas()"class="btn btn-secondary">Mostrar Medicinas</button>
-</table>
-<div style="width: 120%;">
+<div style="width: 140%;">
 <h1>Consulta</h1>
 <table class="table">
 <tr>
@@ -195,10 +179,20 @@
 <input type="text" class="form-control" id="MedicinaR">
 <label for="floatingInput">Medicina</label>
 </th>
+<th>
+    <div class="form-floating">
+      <input type="text" class="form-control" id="Sintomas">
+      <label for="floatingInput">Sintomas</label>
+  </th>
+  <th>
+    <div class="form-floating">
+      <input type="text" class="form-control" id="Diagnostico">
+      <label for="floatingInput">Diagnostico</label>
+  </th>
 <div> 
 <th scope="col" style="position: relative; top: -60px;">
 <div class="table-responsive">
-<table class="table table-bordered"">
+<table class="table table-bordered">
 <thead>
 <tr>
 <th><h5>Todas las consultas</h5></th>
@@ -209,6 +203,7 @@
 <th scope="col">Folio del Paciente</th>
 <th scope="col">Medico que atendio</th>
 <th scope="col">Medicina Recetada</th>
+<th scope="col">Diagnostico</th>
 </tr>
 <tbody id="cuerpo-tabla-consultas"></tbody>
 </table> 
