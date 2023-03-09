@@ -1,3 +1,4 @@
+
 /**
  * 
  * @param {String} parametro 
@@ -17,8 +18,7 @@ function getUsersFromLocalStorage() {
   if (arrayPacientes != null) {
     if (arrayPacientes.length != 0) {
       arrayPacientes.forEach(pacientearray => {
-        let paciente2 = new Paciente(pacientearray.Nombre, pacientearray.ApellidoP, pacientearray.ApellidoM,
-          pacientearray.Direccion, pacientearray.Cp, pacientearray.Telefono, pacientearray.FechaNac, pacientearray.FolioPaciente);
+        let paciente2 = new Paciente(pacientearray.Nombre, pacientearray.ApellidoP, pacientearray.ApellidoM, pacientearray.Direccion, pacientearray.Cp, pacientearray.Telefono, pacientearray.FechaNac, pacientearray.FolioPaciente);
         pacientes.push(paciente2);
       });
     }
@@ -32,8 +32,7 @@ function getMedicsFromLocalStorage() {
   if (arrayMedicos != null) {
     if (arrayMedicos.length != 0) {
       arrayMedicos.forEach(medicarray => {
-        let medicosa = new Medico(medicarray.Nombre, medicarray.ApellidoP, medicarray.ApellidoM,
-          medicarray.Direccion, medicarray.Cp, medicarray.Telefono, medicarray.FechaNac, medicarray.Cedula);
+        let medicosa = new Medico(medicarray.Nombre, medicarray.ApellidoP, medicarray.ApellidoM, medicarray.Direccion, medicarray.Cp, medicarray.Telefono, medicarray.FechaNac, medicarray.Cedula);
         medic.push(medicosa);
       });
     }

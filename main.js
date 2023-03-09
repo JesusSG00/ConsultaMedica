@@ -56,7 +56,7 @@ function guardarMedico() {
 function mostrarMedico() {
     var medicosGuardados = getMedicsFromLocalStorage();
     if (medicosGuardados) {
-        medicos = medicosGuardados;
+        medicos = (medicosGuardados);
         let text = '';
         for (let i = 0; i < medicos.length; i++) {
             text += `<tr>
@@ -73,6 +73,16 @@ function mostrarMedico() {
 }
 
 var consulta = [];
+function asignarPaciente() {
+    this.NombrePaciente = document.getElementById("NombrePaciente").value;
+    return this.NombrePaciente;
+}
+
+function asignarMedico() {
+    this.MedicoT = document.getElementById("MedicoTurno").value;
+    return this.MedicoT;
+}
+
 function agregarConsulta() {
     let Folio = document.getElementById("FolioPacienteC").value;
     let MedicinaR = document.getElementById("MedicinaR").value;
@@ -83,7 +93,7 @@ function agregarConsulta() {
     let result = pacientes.findIndex(({ FolioPaciente }) => FolioPaciente === Folio);
     if (result > -1) {
 
-        let con = new Consulta(NombrePaciente, Folio,MedicoT, MedicinaR, Sintomas, Diagnostico);
+        let con = new Consulta(asignarPaciente(), Folio, asignarMedico(), MedicinaR, Sintomas, Diagnostico);
         consulta.push(con);
         agregarLocalStorage("Consulta", consulta);
 
