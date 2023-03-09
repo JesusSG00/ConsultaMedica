@@ -1,55 +1,41 @@
 
-function generador(){
-    let  ids=[];
-    let id;
-    id = Math.floor(Math.random() * 500) + 1;
-    for(var i=0;i<ids.length;i++){
-         if(id==ids[i]){
-          id = Math.floor(Math.random() * 500) + 1;  
-        }else{
-            return id;
-        }   
-    }
-    
-    return id;
-}
 /**
  * 
  * @param {String} parametro 
  * @param {Array} dato 
  */
-function agregarLocalStorage(parametro,dato){
-  localStorage.setItem(parametro,JSON.stringify(dato));
+function agregarLocalStorage(parametro, dato) {
+  localStorage.setItem(parametro, JSON.stringify(dato));
 }
 
-function sacarLocalStorage(parametro){
+function sacarLocalStorage(parametro) {
   return JSON.parse(localStorage.getItem(parametro));
 }
 
-function getUsersFromLocalStorage(){
+function getUsersFromLocalStorage() {
   let pacientes = [];
   let arrayPacientes = sacarLocalStorage('Paciente');
-  if(arrayPacientes != null){
-    if(arrayPacientes.length != 0){
+  if (arrayPacientes != null) {
+    if (arrayPacientes.length != 0) {
       arrayPacientes.forEach(pacientearray => {
-            let paciente2 = new Paciente( pacientearray.Nombre, pacientearray.ApellidoP, pacientearray.ApellidoM, pacientearray.Direccion, pacientearray.Cp, pacientearray.Telefono, pacientearray.FechaNac, pacientearray.FolioPaciente);
-            pacientes.push(paciente2);
-        });
+        let paciente2 = new Paciente(pacientearray.Nombre, pacientearray.ApellidoP, pacientearray.ApellidoM, pacientearray.Direccion, pacientearray.Cp, pacientearray.Telefono, pacientearray.FechaNac, pacientearray.FolioPaciente);
+        pacientes.push(paciente2);
+      });
     }
   }
-  
   return pacientes;
-
 }
-/*
-function sacarPacientesFromLocalStorage(parameter="pacientes"){
-  let paciente = []; 
-  let pacienteArray = JSON.parse(localStorage.getItem(parameter));
-  if(pacienteArray.length != 0){
-      mecanicsArray.forEach(element => {
-          let per1 =  new Paciente(Element.IdPaciente,Element.Nombre,Element.ApellidoP,Element.ApellidoM,Element.Direccion,Elemento.Cp,Element.Telefono,Element.FechaNac,Element.FolioPaciente);
-          paciente.push(per1);
+
+function getMedicsFromLocalStorage() {
+  let medic = [];
+  let arrayMedicos = sacarLocalStorage('Medicos');
+  if (arrayMedicos != null) {
+    if (arrayMedicos.length != 0) {
+      arrayMedicos.forEach(medicarray => {
+        let medicosa = new Medico(medicarray.Nombre, medicarray.ApellidoP, medicarray.ApellidoM, medicarray.Direccion, medicarray.Cp, medicarray.Telefono, medicarray.FechaNac, medicarray.Cedula);
+        medic.push(medicosa);
       });
+    }
   }
-  return mecanics;
-}*/
+  return medic;
+}

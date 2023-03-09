@@ -2,15 +2,15 @@ var pacientes = [];
 var medicos = [];
 datosPacientes();
 function guardarPaciente() {
-    this.Nombre = document.getElementById("Nombre").value;
-    this.ApellidoP = document.getElementById("ApellidoP").value;
-    this.ApellidoM = document.getElementById("ApellidoM").value;
-    this.Direccion = document.getElementById("Direccion").value;
-    this.Cp = document.getElementById("Cp").value;
-    this.Telefono = document.getElementById("Telefono").value;
-    this.FechaNac = document.getElementById("FechaNac").value;
-    this.FolioPaciente = document.getElementById("FolioPaciente").value;
-    let pa1 = new Paciente( Nombre, ApellidoP, ApellidoM, Direccion, Cp, Telefono, FechaNac, FolioPaciente);
+    let Nombre = document.getElementById("Nombre").value;
+    let ApellidoP = document.getElementById("ApellidoP").value;
+    let ApellidoM = document.getElementById("ApellidoM").value;
+    let Direccion = document.getElementById("Direccion").value;
+    let Cp = document.getElementById("Cp").value;
+    let Telefono = document.getElementById("Telefono").value;
+    let FechaNac = document.getElementById("FechaNac").value;
+    let FolioPaciente = document.getElementById("FolioPaciente").value;
+    let pa1 = new Paciente(Nombre, ApellidoP, ApellidoM, Direccion, Cp, Telefono, FechaNac, FolioPaciente);
     pacientes.push(pa1);
     agregarLocalStorage('Paciente', pacientes);
     alert("Guardado");
@@ -38,16 +38,15 @@ function datosPacientes() {
 }
 
 function guardarMedico() {
-    this.Nombre = document.getElementById("NombreMed").value;
-    this.ApellidoP = document.getElementById("ApellidoPMed").value;
-    this.ApellidoM = document.getElementById("ApellidoMMed").value;
-    this.Direccion = document.getElementById("DireccionMed").value;
-    this.Cp = document.getElementById("CpMed").value;
-    this.Telefono = document.getElementById("TelefonoMed").value;
-    this.FechaNac = document.getElementById("FechaNacMed").value;
-    this.IdMedico = generador();
-    this.Cedula = document.getElementById("CedulaMed").value;
-    let med = new Medico(Nombre, ApellidoP, ApellidoM, Direccion, Cp, Telefono, FechaNac, IdMedico, Cedula);
+    let Nombre = document.getElementById("NombreMed").value;
+    let ApellidoP = document.getElementById("ApellidoPMed").value;
+    let ApellidoM = document.getElementById("ApellidoMMed").value;
+    let Direccion = document.getElementById("DireccionMed").value;
+    let Cp = document.getElementById("CpMed").value;
+    let Telefono = document.getElementById("TelefonoMed").value;
+    let FechaNac = document.getElementById("FechaNacMed").value;
+    let Cedula = document.getElementById("CedulaMed").value;
+    let med = new Medico(Nombre, ApellidoP, ApellidoM, Direccion, Cp, Telefono, FechaNac, Cedula);
     medicos.push(med);
     agregarLocalStorage("Medicos", medicos);
     alert("Guardado");
@@ -55,9 +54,9 @@ function guardarMedico() {
 }
 
 function mostrarMedico() {
-    var medicosGuardados = sacarLocalStorage("Medicos");
+    var medicosGuardados = getMedicsFromLocalStorage();
     if (medicosGuardados) {
-        medicos = JSON.parse(medicosGuardados);
+        medicos = (medicosGuardados);
         let text = '';
         for (let i = 0; i < medicos.length; i++) {
             text += `<tr>
@@ -92,27 +91,28 @@ function agregarConsulta() {
 
     // ENCONTRAR AL PACIENTE
     let result = pacientes.findIndex(({ FolioPaciente }) => FolioPaciente === Folio);
-    if(result > -1){
-        
+    if (result > -1) {
+
         let con = new Consulta(asignarPaciente(), Folio, asignarMedico(), MedicinaR, Sintomas, Diagnostico);
         consulta.push(con);
-        agregarLocalStorage("Consulta",consulta);
+        agregarLocalStorage("Consulta", consulta);
 
         let paciente = pacientes.find(({ FolioPaciente }) => FolioPaciente === Folio);
 
         pacientes[result].agregarConsulta(consulta);
         paciente.agregarConsulta(consulta);
-        
+
         alert("Consulta Agregada");
-    }else{
+    } else {
         alert('No se encontrol al paciente');
     }
+    mostrarConsultas();
 }
 
 function mostrarConsultas() {
     var consultasGuardadas = sacarLocalStorage("Consulta");
     if (consultasGuardadas) {
-        consulta = JSON.parse(consultasGuardadas);
+        consulta = consultasGuardadas;
         let resultado = '';
         for (let i = 0; i < consulta.length; i++) {
             resultado += `<tr>
@@ -128,5 +128,10 @@ function mostrarConsultas() {
     } else {
         document.getElementById('cuerpo-tabla-consultas').innerHTML = 'No hay consultas guardadas.';
     }
-    alert("Mostrando");
+}
+
+function todo() {
+    datosPacientes();
+    mostrarMedico();
+    mostrarConsultas();
 }
